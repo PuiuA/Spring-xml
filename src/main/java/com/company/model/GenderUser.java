@@ -1,5 +1,5 @@
 package com.company.model;
 
-public enum GenderClient {
+public enum GenderUser {
     MALE, FEMALE, OTHER;
 }
