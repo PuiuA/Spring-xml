@@ -9,15 +9,10 @@
                            http://www.springframework.org/schema/mvc/
                            http://www.springframework.org/schema/mvc//spring-mvc.xsd">
 
+<!--    Pentru ca MVC sa inteleaga @ReguestMapping si @RestController, etc.-->
+    <mvc:annotation-driven/>
+<!--    Sa fie scanate doar acest package, pentru controller-ele-->
+    <context:component-scan base-package="com.company.controller"/>
 
-    <bean id="bookingService" class="com.company.service.impl.BookingServiceImpl" name="BookingService;bookingServiceImpl">
-        <constructor-arg ref="bookingRepository"/>
-    </bean>
-    <bean id="userService" class="com.company.service.impl.UserServiceImpl" name="UserService;userServiceImpl">
-        <constructor-arg ref="userRepository" />
-    </bean>
-    <bean id="roomService" class="com.company.service.impl.RoomServiceImpl" name="RoomService;roomServiceImpl">
-        <constructor-arg ref="roomRepository" />
-    </bean>
 
 </beans>

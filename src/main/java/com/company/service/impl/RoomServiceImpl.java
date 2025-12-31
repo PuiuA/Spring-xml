@@ -1,4 +1,6 @@
 package com.company.service.impl;
 
-public class RoomServiceImpl {
+import com.company.service.RoomService;
+
+public class RoomServiceImpl implements RoomService {
 }
