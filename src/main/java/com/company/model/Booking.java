@@ -15,6 +15,7 @@ public class Booking {
     private LocalDate checkIn;
     @Column(name = "check_out")
     private LocalDate checkOut;
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private BookingStatus status;
     @ManyToOne

@@ -8,7 +8,7 @@
   http://www.springframework.org/schema/context/spring-context.xsd">
 
     <import resource="repository-beans.xml"/>
-    <import resource="service-beans.xml" />
+    <import resource="service-beans-cfg.xml" />
     <import resource="controller-cfg.xml"/>
 
 </beans>

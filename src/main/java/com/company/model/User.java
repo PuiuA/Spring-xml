@@ -22,6 +22,7 @@ public class User {
     private String phoneNumber;
     @Column(name = "age")
     private Integer age;
+    @Enumerated(EnumType.STRING)
     @Column( name = "gender")
     private GenderUser gender;
     @Column( name = "vip")

@@ -1,18 +1,17 @@
-<beans xmlns="http://www.springframework.org/schema/beans/"
-       xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context/"
-       xmlns:mvc="http://www.springframework.org/schema/mvc/"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans/
-                           http://www.springframework.org/schema/beans//spring-beans.xsd
-                           http://www.springframework.org/schema/context/
-                           http://www.springframework.org/schema/context//spring-context.xsd
-                           http://www.springframework.org/schema/mvc/
-                           http://www.springframework.org/schema/mvc//spring-mvc.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-<!--    Pentru ca MVC sa inteleaga @ReguestMapping si @RestController, etc.-->
+    <!-- Pentru ca MVC sa inteleaga @RequestMapping, @RestController, etc. -->
     <mvc:annotation-driven/>
-<!--    Sa fie scanate doar acest package, pentru controller-ele-->
-    <context:component-scan base-package="com.company.controller"/>
 
+    <!-- Sa fie scanate doar acest package pentru controller-e -->
+    <context:component-scan base-package="com.company.controller"/>
 
 </beans>

@@ -13,6 +13,7 @@ public class Room {
     private Integer floor;
     @Column(name = "room_number", nullable = false, unique = true)
     private Integer roomNumber;
+    @Enumerated(EnumType.STRING)
     @Column(name = "room_type", nullable = false)
     private RoomType roomType;
     @Column(name = "price_per_night")

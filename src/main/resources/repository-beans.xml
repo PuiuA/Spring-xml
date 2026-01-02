@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:tx="http://java.sun.com/xml/ns/persistence"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-  https://www.springframework.org/schema/beans/spring-beans.xsd
-  http://www.springframework.org/schema/context
-  http://www.springframework.org/schema/context/spring-context.xsd">
-
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <bean id="bookingRepository" class="com.company.repository.impl.BookingRepositoryImpl"/>
     <bean id="userRepository" class="com.company.repository.impl.UserRepositoryImpl"/>
-    <bean id="roomRepository" class="com.company.repository.impl.RoomRepositoryImpl" />
+    <bean id="roomRepository" class="com.company.repository.impl.RoomRepositoryImpl"/>
 
     <!-- ca sa mearga @PersistenceContext -->
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 
+    <!-- ca sa mearga @Transactional -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
@@ -43,6 +42,5 @@
             </props>
         </property>
     </bean>
-
 
 </beans>
