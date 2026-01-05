@@ -16,9 +16,9 @@ public class Room {
     @Enumerated(EnumType.STRING)
     @Column(name = "room_type", nullable = false)
     private RoomType roomType;
-    @Column(name = "price_per_night")
+    @Column(name = "price_per_night", nullable = false)
     private Float pricePerNight;
-    @Column(name = "capacity")
+    @Column(name = "capacity", nullable = false)
     private Integer capacity;
 
     public Room(Integer floor, Integer roomNumber, RoomType roomType, Integer capacity) {

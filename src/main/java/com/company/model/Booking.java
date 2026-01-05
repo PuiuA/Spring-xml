@@ -9,20 +9,20 @@ public class Booking {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "price")
+    @Column(name = "price", nullable = false)
     private float price;
-    @Column(name = "check_in")
+    @Column(name = "check_in", nullable = false)
     private LocalDate checkIn;
-    @Column(name = "check_out")
+    @Column(name = "check_out", nullable = false)
     private LocalDate checkOut;
     @Enumerated(EnumType.STRING)
-    @Column(name = "status")
+    @Column(name = "status", nullable = false)
     private BookingStatus status;
     @ManyToOne
-    @JoinColumn(name = "room_id")
+    @JoinColumn(name = "room_id", nullable = false)
     private Room room;
     @ManyToOne
-    @JoinColumn( name = "client_id")
+    @JoinColumn( name = "client_id", nullable = false)
     private User user;
 
     public Booking(float price, String checkIn, String checkOut, BookingStatus status, Room room, User user) {

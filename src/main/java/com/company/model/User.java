@@ -16,20 +16,20 @@ public class User {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
-    @Column(name = "email")
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
-    @Column(name = "phone_number")
+    @Column(name = "phone_number", nullable = false, unique = true)
     private String phoneNumber;
-    @Column(name = "age")
+    @Column(name = "age", nullable = false)
     private Integer age;
     @Enumerated(EnumType.STRING)
-    @Column( name = "gender")
+    @Column( name = "gender", nullable = false)
     private GenderUser gender;
     @Column( name = "vip")
     private Boolean vip;
     @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
     private List<Booking> bookings;
-    @Column( name = "password")
+    @Column( name = "password", nullable = false)
     private String password;
 
     public User(String firstName, String lastName, String email, String phoneNumber, Integer age, GenderUser gender, Boolean vip, String password) {
