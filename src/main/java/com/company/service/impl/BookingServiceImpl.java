@@ -1,13 +1,13 @@
 package com.company.service.impl;
 
-import com.company.repository.BookingRepository;
+import com.company.repository.impl.BookingRepositoryImpl;
 import com.company.service.BookingService;
 
 public class BookingServiceImpl implements BookingService {
 
-    private BookingRepository bookingRepository;
+    private BookingRepositoryImpl bookingRepository;
 
-    public BookingServiceImpl(BookingRepository bookingRepository) {
+    public BookingServiceImpl(BookingRepositoryImpl bookingRepository) {
         this.bookingRepository = bookingRepository;
     }
 }
