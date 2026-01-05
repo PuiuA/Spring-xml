@@ -27,7 +27,7 @@ public class User {
     private GenderUser gender;
     @Column( name = "vip")
     private Boolean vip;
-    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Booking> bookings;
     @Column( name = "password", nullable = false)
     private String password;

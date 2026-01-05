@@ -22,7 +22,7 @@ public class Booking {
     @JoinColumn(name = "room_id", nullable = false)
     private Room room;
     @ManyToOne
-    @JoinColumn( name = "client_id", nullable = false)
+    @JoinColumn( name = "user_id", nullable = false)
     private User user;
 
     public Booking(float price, String checkIn, String checkOut, BookingStatus status, Room room, User user) {
