@@ -2,10 +2,9 @@ package com.company.controller;
 
 import com.company.dto.RoomDto;
 import com.company.service.impl.RoomServiceImpl;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/room")
@@ -19,5 +18,21 @@ public class RoomController {
     @GetMapping("/{id}")
     public RoomDto getRoom(@PathVariable Long id) {
         return roomService.getRoomById(id);
+    }
+    @GetMapping
+    public List<RoomDto> getRooms() {
+        return roomService.getAllRooms();
+    }
+    @PostMapping
+    public RoomDto createRoom(@RequestBody RoomDto roomDto) {
+        return roomService.createRoom(roomDto);
+    }
+    @PutMapping
+    public RoomDto updateRoom(@RequestBody RoomDto roomDto) {
+        return roomService.updateRoom(roomDto);
+    }
+    @DeleteMapping("/{id}")
+    public void deleteRoom(@PathVariable Long id) {
+        roomService.deleteRoom(id);
     }
 }

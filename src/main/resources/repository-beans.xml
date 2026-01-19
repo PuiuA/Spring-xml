@@ -6,13 +6,21 @@
            http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <bean id="bookingRepository" class="com.company.repository.impl.BookingRepositoryImpl"/>
-    <bean id="userRepository" class="com.company.repository.impl.UserRepositoryImpl"/>
-    <bean id="roomRepository" class="com.company.repository.impl.RoomRepositoryImpl"/>
+    <bean id="bookingRepository" class="com.company.repository.impl.BookingRepositoryImpl">
+        <property name="em" ref="entityManager"/>
+    </bean>
 
-    <!-- ca sa mearga @PersistenceContext -->
-    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+    <bean id="userRepository" class="com.company.repository.impl.UserRepositoryImpl">
+        <property name="em" ref="entityManager"/>
+    </bean>
 
+    <bean id="roomRepository" class="com.company.repository.impl.RoomRepositoryImpl">
+        <property name="em" ref="entityManager"/>
+    </bean>
+
+    <bean id="entityManager" class="org.springframework.orm.jpa.support.SharedEntityManagerBean">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
     <!-- ca sa mearga @Transactional -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
