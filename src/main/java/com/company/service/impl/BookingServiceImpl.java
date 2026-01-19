@@ -12,7 +12,7 @@ public class BookingServiceImpl implements BookingService {
         this.bookingRepository = bookingRepository;
     }
 
-    public BookingDto getBooking(Long id) {
+    public BookingDto getBookingById(Long id) {
         return BookingDto.fromBookingToBookingDtoWithoutUser(bookingRepository.getById(id));
     }
 }
